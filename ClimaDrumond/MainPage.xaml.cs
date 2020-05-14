@@ -92,6 +92,7 @@ namespace ClimaDrumond
             }
         }
 
+        //Other option are do this method using MVVM I put one example in this projecto to demonstrate my practice.
         async void GetJsonFile()
         {
             //The file is very big. So, I put in the project. If the file were small I get the informations using URL.
