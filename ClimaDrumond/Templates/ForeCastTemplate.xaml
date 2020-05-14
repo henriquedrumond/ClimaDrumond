@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ClimaDrumond"
+             x:Class="ClimaDrumond.ForeCastTemplate">
+       <ContentView.Resources>
+            <ResourceDictionary>
+                <Style x:Key="labelStyle" 
+                       TargetType="Label">
+                    <Setter Property="FontSize" 
+                            Value="Small" />
+                    <Setter Property="TextColor" 
+                            Value="Gray" />
+                </Style>
+            
+                <Style x:Key="labelResultStyle" 
+                       TargetType="Label">
+                    <Setter Property="FontSize" 
+                            Value="Medium" />
+                    <Setter Property="Margin" 
+                            Value="10,0,0,0" />
+                </Style>
+            
+                <local:LongToDateTimeConverter x:Key="longToDateTimeConverter" />
+            </ResourceDictionary>
+       </ContentView.Resources>
+       <StackLayout Padding="10">
+                <BoxView HeightRequest="10" WidthRequest="1" BackgroundColor="Black"/>
+                
+                <Label Text="Temperature" 
+                       Style="{StaticResource labelStyle}" />
+                <Label Text="{Binding main.Temperature}" 
+                       Style="{StaticResource labelResultStyle}" />
+                
+                <Label Text="Wind Speed" 
+                       Style="{StaticResource labelStyle}" />
+                <Label Text="{Binding wind.Speed}" 
+                       Style="{StaticResource labelResultStyle}" />
+                
+                <Label Text="Humidity" 
+                       Style="{StaticResource labelStyle}" />
+                <Label Text="{Binding main.Humidity}" 
+                       Style="{StaticResource labelResultStyle}" />
+                
+                <Label Text="Visibility" 
+                       Style="{StaticResource labelStyle}" />
+                <Label Text="{Binding weather[0].Visibility}" 
+                       Style="{StaticResource labelResultStyle}" />
+           </StackLayout>
+</ContentView>
